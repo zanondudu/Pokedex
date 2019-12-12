@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./App.scss";
 import Button from "./components/Button";
 
 function App() {
@@ -25,8 +25,12 @@ function App() {
 
   return (
     <div className="App">
-      {text}
-      <Button onClick={() => setText("bergamota")}>{text}</Button>
+      <div className="App-link">
+        {text}
+        <div className="vermelho">
+          <Button onClick={() => setText("bergamota")}>{text}</Button>
+        </div>
+      </div>
     </div>
   );
 }

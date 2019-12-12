@@ -11,7 +11,9 @@ const AppTest = () => {
 
   return (
     <>
-      <Button onClick={() => setShow(!show)}>toggle</Button>
+      <Button color="yellow" onClick={() => setShow(!show)}>
+        toggle
+      </Button>
       {show && <App />}
     </>
   );
