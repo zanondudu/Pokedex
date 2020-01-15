@@ -1,0 +1,17 @@
+.camera {
+    position: absolute;
+    width: calc(100vw - 10px);
+    height: calc(100vh - 10px);
+    background-color: red;
+    z-index: 1;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border: 5px solid red;
+    flex-direction: column;
+}
+
+.camera > section > section {
+    border: 5px solid white;
+    width: calc(100% - 10px) !important;
+}
