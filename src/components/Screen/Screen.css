@@ -1,0 +1,13 @@
+
+.screen {
+  position: relative;
+}
+
+.display {
+  margin-top: -67vw;
+  z-index: 4;
+}
+
+.display-background {
+  z-index: 3;
+}
