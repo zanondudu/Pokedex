@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-const INITIAL_STATE = {name: 'ditto'};
+const INITIAL_STATE = {name: ''};
 
 function pokemon(state = INITIAL_STATE, action) {
   switch (action.type) {

@@ -4,16 +4,8 @@ import Polygon from '../../components/Polygon/Polygon';
 import QrReader from 'react-qr-reader';
 
 const Camera = props => {
-  const [pokemonName, setPokemonName] = useState('');
-  const [handleScan, setHandleScan] = useState(data => {    
-    setPokemonName('data');
-    console.log(pokemonName);
-    
-  })
-  const [handleError, setHandleError] = useState(() => {    
-    // alert('Deu ruim')
-  })
-   
+  const { handleScan, handleError } = props;
+
   return ( 
     <>
       <Polygon
