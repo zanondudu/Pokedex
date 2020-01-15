@@ -48,7 +48,6 @@ class AppClass extends Component {
     return (
       <div className="App">
         {text}
-        <Button onClick={this.onClickButton}>{text}</Button>
       </div>
     );
   }

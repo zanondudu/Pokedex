@@ -1,0 +1,9 @@
+.content {
+    background-color: green;
+    border-radius: 15px;
+}
+
+.screen{
+    width: 500;
+    height: 500px;
+}

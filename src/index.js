@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 // import AppClass from "./AppClass";
-import Button from "./components/Button";
 import * as serviceWorker from "./serviceWorker";
 
 const AppTest = () => {
-  const [show, setShow] = useState(true);
-
-  return (
-    <>
-      <Button color="yellow" onClick={() => setShow(!show)}>
-        toggle
-      </Button>
-      {show && <App />}
-    </>
-  );
+  return ( <App /> );
 };
 
 ReactDOM.render(<AppTest />, document.getElementById("root"));

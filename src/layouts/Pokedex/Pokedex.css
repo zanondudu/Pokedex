@@ -1,0 +1,13 @@
+body {
+    background-color: red;
+}
+
+.header-circles {
+    display: flex;
+    flex-direction: row;
+}
+
+.lines {
+    display: flex;
+    flex-direction: column;
+}
