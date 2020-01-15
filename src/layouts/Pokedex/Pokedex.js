@@ -1,38 +1,64 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Pokedex.css';
 import Line from "../../components/Line/Line"
 import Polygon from '../../components/Polygon/Polygon'
 import ScreenBorder from '../../components/ScreenBorder/ScreenBorder'
 import Screen from '../../components/Screen/Screen'
 import Camera from '../../components/Camera/Camera'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 // import { Container } from './styles';
 
 const Pokedex = () => {
-
   const dispatch = useDispatch();
+  const showCamera =  useSelector(state => state.camera);
+
+  useEffect(() => {
+  }, [showCamera])
 
   const sendPokemon = pokemon => {
     dispatch({ type: 'SEARCH', name: pokemon});
-    console.log('ss');
-    
+  }
+
+  const setCamera = camera => {
+    dispatch({ type: 'CAMERA', camera: camera})
   }
 
   const handleScan = data => {
     sendPokemon(data);
+    if(data) {
+      setCamera(false);
+    }
+    
   }
-  const errorScan = error => {
-    console.log('error');
+
+  const handleError = error => {
   }
 
   return (
     <>
       <div className="header-circles">
-        <Camera 
-          handleScan={handleScan}
-          errorScan={errorScan}
+        <Polygon
+          widthProp={13}
+          heightProp={7}
+          borderLeftProp="solid 8px #BABACA"
+          borderRightProp="solid 8px #BABACA"
+          borderTopProp="solid 8px #BABACA"
+          borderBottomProp="solid 8px #BABACA"
+          colorProp="#157CB3"
+          marginLeftProp={5}
+          marginTopProp={3}
+          borderRadiusProp="50%"
+          onClick={() => { setCamera(true) }}
         />
+        { showCamera &&
+          <div className="camera">
+            <Camera 
+              handleScan={handleScan}
+              handleError={handleError}
+            /> 
+          </div> 
+        }
         <Polygon
           widthProp={7} 
           heightProp={4}

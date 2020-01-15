@@ -16,20 +16,21 @@ const StyledDiv = styled.div`
   transform: rotate(${props => props.rotacao }deg);
 `;
 
-const Polygon = props => {
-  const { widthProp,
-          borderLeftProp,
-          borderTopProp,
-          borderRightProp,
-          borderBottomProp,
-          colorProp,
-          heightProp,
-          marginTopProp,
-          marginLeftProp,
-          borderRadiusProp,
-          degreesProp,
-        } = props;
-  
+const Polygon = ({
+  widthProp,
+  borderLeftProp,
+  borderTopProp,
+  borderRightProp,
+  borderBottomProp,
+  colorProp,
+  heightProp,
+  marginTopProp,
+  marginLeftProp,
+  borderRadiusProp,
+  degreesProp,  
+  onClick,
+  ...props
+}) => {
   return (
     <StyledDiv 
       bordaEsquerda={borderLeftProp}
@@ -43,6 +44,7 @@ const Polygon = props => {
       margemEsquerda={marginLeftProp}
       radioBorda={borderRadiusProp}
       rotacao={degreesProp}
+      onClick={onClick}
     />
   );
 };
@@ -58,7 +60,8 @@ Polygon.propTypes = {
   marginTopProp: PropTypes.number.isRequired,
   marginLeftProp: PropTypes.number.isRequired,
   borderRadiusProp: PropTypes.string,
-  degreesProp: PropTypes.number
+  degreesProp: PropTypes.number,
+  onClick: PropTypes.func
 };
 
 Polygon.defaultProps = {
@@ -67,7 +70,8 @@ Polygon.defaultProps = {
   borderRightProp: 'none',
   borderBottomProp: 'none',
   degreesProp: 0,
-  borderRadiusProp: '0%'
+  borderRadiusProp: '0%',
+  onClick: () => {},
 };
 
 export default Polygon
