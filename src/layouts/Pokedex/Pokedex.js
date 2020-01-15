@@ -3,27 +3,15 @@ import './Pokedex.css';
 import Line from "../../components/Line/Line"
 import Polygon from '../../components/Polygon/Polygon'
 import ScreenBorder from '../../components/ScreenBorder/ScreenBorder'
-import Card from '../../components/Card/Card';
-import Navbar from '../../components/Navbar/ Navbar';
 import Screen from '../../components/Screen/Screen'
+import Camera from '../../components/Camera/Camera'
 
 // import { Container } from './styles';
 
 const Pokedex = () => 
   <>
     <div className="header-circles">
-      <Polygon
-        widthProp={13} 
-        heightProp={7}
-        borderLeftProp="solid 8px #babaca"
-        borderRightProp="solid 8px #babaca"
-        borderTopProp="solid 8px #babaca"
-        borderBottomProp="solid 8px #babaca"
-        colorProp="#157cb3"
-        marginLeftProp={5}
-        marginTopProp={3}
-        borderRadiusProp="50%"
-      />
+      <Camera />
       <Polygon
         widthProp={7} 
         heightProp={4}
