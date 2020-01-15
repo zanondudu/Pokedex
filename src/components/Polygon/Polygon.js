@@ -30,7 +30,6 @@ const Polygon = props => {
           degreesProp,
         } = props;
   
-  
   return (
     <StyledDiv 
       bordaEsquerda={borderLeftProp}
