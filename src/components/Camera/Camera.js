@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux'
 import QrReader from 'react-qr-reader';
 import './Camera.css';
+import Polygon from '../../components/Polygon/Polygon'
 
 const Camera = props => {
   const { handleScan, handleError } = props;
@@ -20,9 +21,17 @@ const Camera = props => {
         style={{ width: '100%' }}
       />
       <div>
-        <button onClick={() => { setCamera(false) }}>
+        {/* <button onClick={() => { setCamera(false) }}>
           fechar camera
-        </button>
+        </button> */}
+        <Polygon
+          widthProp={88}
+          heightProp={37}
+          colorProp="#f2f2f2"
+          marginLeftProp={0}
+          marginTopProp={3}
+          borderRadiusProp="15%"
+        />
       </div>
     </>
   );
